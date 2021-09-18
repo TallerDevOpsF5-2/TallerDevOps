@@ -2,6 +2,12 @@ pipeline {
   agent any
   stages {
     stage('Contruyendo la App') {
+      agent {
+         docker {
+            image 'python:3.9'
+            args '--user 0:0 --net host'
+         }
+      }
       steps {
         echo 'Paso 1 Contruyendo la App'
         sh 'sh run_build_script.sh'
