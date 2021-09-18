@@ -22,7 +22,6 @@ pipeline {
         timestamps() {
           echo 'Momento de confirmacion ok manual'
         }
-
       }
     }
 
@@ -32,8 +31,6 @@ pipeline {
         sh 'run_deploy_script.sh'
       }
     }
-
-  }
 
   }
 }
